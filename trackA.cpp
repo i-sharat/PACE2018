@@ -271,7 +271,7 @@ void computeDPTable( PUI **T, PUI **D )
             // Simulate an instance of single source shortest paths by using the bestSplits for each vertex
             // Add a dummy source vertex x with a dummy edge xv of weight bestSplit[v].F
             // Then find shortest paths from x to every vertex 1 <= v <= N.
-            // improves running time to $O(3^K K^O(1) (N+M))$.
+            // improves running time to $O(3^K * K * (N log N + M))$.
 
             VPUI tmpD( N+1, MP(INF,0) ); // distances and prev vertex
             priority_queue<PUI, std::vector<PUI>, std::greater<PUI> > q;
@@ -397,12 +397,9 @@ void computeDPTable( PUI **T, PUI **D )
     }
 }
 
-/*  
-	the opt steiner tree T for spanning terminals in sub1 + sub2 and
-    including the steiner node u consists of a shortest path from u to v, 
-    sub-steiner tree T1 that spans sub1 and v, and sub-steiner tree T2 that
-    spans sub2 and v. 
-*/
+/* The opt steiner tree T for spanning terminals in sub1 + sub2 and including the steiner node u 
+consists of a shortest path from u to v, a sub-steiner tree T1 that spans sub1 and v, 
+and a sub-steiner tree T2 that spans sub2 and v. */
 
 void constructSubSolution( set<PUI> & Soln, UI u, UI v, 
         UI sub1, UI sub2, PUI **T, PUI **D )
