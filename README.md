@@ -21,7 +21,7 @@ Note:
 
 (1) trackC.cpp does not terminate by itself so it requires the user to send a kill signal. After running the code for a few seconds/minutes, send 'kill <process-id>' command from terminal.
 
-(2) There is a bug in trackA.cpp which makes the code produce the wrong answer for exactly one of the secret instances in track A. The code produces correct answers for all public instances.
+(2) There is a bug in trackA.cpp which makes the code produce a wrong answer for exactly one of the secret instances in track A. In the remaining instances (public or secret) it is either Correct/Time Limit Exceeded/Memory Limit Exceeded/Runtime Error.
 
 Additional details about the algorithm for Track A:
 
