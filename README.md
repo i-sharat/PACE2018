@@ -10,11 +10,15 @@ trackC.cpp takes the same kind of input as does trackA.cpp. The code produces as
 To run the above codes use the following commands to (1) compile (2) run with the input data.
 
 For track A:
+
 c++ -std=c++11 -O3 -march=native -Wall -Wextra    trackA.cpp   -o trackA
+
 ./trackA < ../path-to-input-data-folder/instancexyz.gr 
 
 For track C:
+
 c++ -std=c++11 -O3 -march=native -Wall -Wextra    trackC.cpp   -o trackC
+
 ./trackC < ../path-to-input-data-folder/instancexyz.gr 
 
 Note: 
